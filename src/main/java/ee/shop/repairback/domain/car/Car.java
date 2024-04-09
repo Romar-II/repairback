@@ -1,5 +1,6 @@
-package ee.shop.repairback.domain;
+package ee.shop.repairback.domain.car;
 
+import ee.shop.repairback.domain.modelyear.ModelYear;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

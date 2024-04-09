@@ -1,15 +1,17 @@
-package ee.shop.repairback.domain;
+package ee.shop.repairback.domain.model;
 
+import ee.shop.repairback.domain.brand.Brand;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "image", schema = "repair")
-public class Image {
+@Table(name = "model", schema = "repair")
+public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -17,11 +19,12 @@ public class Image {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+    @JoinColumn(name = "brand_id", nullable = false)
+    private Brand brand;
 
+    @Size(max = 255)
     @NotNull
-    @Column(name = "data", nullable = false)
-    private byte[] data;
+    @Column(name = "name", nullable = false)
+    private String name;
 
 }

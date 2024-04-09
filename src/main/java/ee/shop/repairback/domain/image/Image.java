@@ -1,5 +1,6 @@
-package ee.shop.repairback.domain;
+package ee.shop.repairback.domain.image;
 
+import ee.shop.repairback.domain.product.Product;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -8,8 +9,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "order_item", schema = "repair")
-public class OrderItem {
+@Table(name = "image", schema = "repair")
+public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -17,15 +18,11 @@ public class OrderItem {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "order_id", nullable = false)
-    private Order order;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "repair_item_id")
-    private RepairItem repairItem;
+    @NotNull
+    @Column(name = "data", nullable = false)
+    private byte[] data;
 
 }

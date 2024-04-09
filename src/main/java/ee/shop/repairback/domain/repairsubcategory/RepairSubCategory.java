@@ -1,18 +1,17 @@
-package ee.shop.repairback.domain;
+package ee.shop.repairback.domain.repairsubcategory;
 
+import ee.shop.repairback.domain.repairmaincategory.RepairMainCategory;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-
 @Getter
 @Setter
 @Entity
-@Table(name = "repair_item", schema = "repair")
-public class RepairItem {
+@Table(name = "repair_sub_category", schema = "repair")
+public class RepairSubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -20,16 +19,12 @@ public class RepairItem {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "repair_sub_category_id", nullable = false)
-    private RepairSubCategory repairSubCategory;
+    @JoinColumn(name = "repair_main_category_id", nullable = false)
+    private RepairMainCategory repairMainCategory;
 
     @Size(max = 255)
     @NotNull
     @Column(name = "name", nullable = false)
     private String name;
-
-    @NotNull
-    @Column(name = "price", nullable = false, precision = 10, scale = 2)
-    private BigDecimal price;
 
 }

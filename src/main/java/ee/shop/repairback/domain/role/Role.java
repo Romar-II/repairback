@@ -1,22 +1,24 @@
-package ee.shop.repairback.domain;
+package ee.shop.repairback.domain.role;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "repair_main_category", schema = "repair")
-public class RepairMainCategory {
+@Table(name = "role", schema = "repair")
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
+    @Size(max = 255)
     @NotNull
     @Column(name = "name", nullable = false)
-    private Integer name;
+    private String name;
 
 }

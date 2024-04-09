@@ -1,5 +1,6 @@
-package ee.shop.repairback.domain;
+package ee.shop.repairback.domain.modelyear;
 
+import ee.shop.repairback.domain.model.Model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

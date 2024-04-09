@@ -1,4 +1,4 @@
-package ee.shop.repairback.domain;
+package ee.shop.repairback.domain.order;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
