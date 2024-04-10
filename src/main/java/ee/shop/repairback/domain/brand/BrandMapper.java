@@ -1,14 +1,21 @@
 package ee.shop.repairback.domain.brand;
 
-import ee.shop.repairback.business.brand.BrandInfo;
+import ee.shop.repairback.business.brand.dto.BrandInfo;
 import org.mapstruct.*;
+
+import java.util.List;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
 public interface BrandMapper {
-    Brand toEntity(BrandInfo brandInfo);
 
-    BrandInfo toDto(Brand brand);
+@Mapping(source = "id", target = "brandId")
+@Mapping(source = "name", target = "brandName")
+    BrandInfo toBrandInfo(Brand brand);
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    Brand partialUpdate(BrandInfo brandInfo, @MappingTarget Brand brand);
+    List<BrandInfo> toBrandInfos(List<Brand> brands);
+
+
+
+
+
 }

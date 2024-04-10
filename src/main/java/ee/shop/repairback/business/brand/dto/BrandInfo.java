@@ -1,4 +1,4 @@
-package ee.shop.repairback.business.brand;
+package ee.shop.repairback.business.brand.dto;
 
 import ee.shop.repairback.domain.brand.Brand;
 import lombok.AllArgsConstructor;
