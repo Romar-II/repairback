@@ -105,7 +105,7 @@ CREATE TABLE repair_sub_category (
 CREATE TABLE role (
                       id serial  NOT NULL,
                       name varchar(255)  NOT NULL,
-                      CONSTRAINT ID PRIMARY KEY (id)
+                      CONSTRAINT role_pk PRIMARY KEY (id)
 );
 
 -- Table: user
@@ -115,7 +115,7 @@ CREATE TABLE "user" (
                         username varchar(255)  NOT NULL,
                         password varchar(255)  NOT NULL,
                         status char(1)  NOT NULL,
-                        CONSTRAINT ID PRIMARY KEY (id)
+                        CONSTRAINT user_pk PRIMARY KEY (id)
 );
 
 -- foreign keys
