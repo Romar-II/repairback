@@ -18,7 +18,7 @@ public class BrandService {
     private final BrandMapper brandMapper;
 
 
-    public void List<BrandInfo> getBrands() {
+    public List<BrandInfo> getBrands() {
         List<Brand> brands = brandRepository.findAll();
         return brandMapper.toBrandInfos(brands);
     }
