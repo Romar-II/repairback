@@ -13,6 +13,6 @@ public interface ModelMapper {
     @Mapping(source = "name", target = "name")
 
     ModelInfo toModalInfos(Model model);
-    List<ModalInfo> toModalInfos(Model model);
 
+    List<ModelInfo> toModalInfos(List<Model> modelInfos);
 }
