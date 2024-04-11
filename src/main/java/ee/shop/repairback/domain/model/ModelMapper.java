@@ -11,8 +11,8 @@ public interface ModelMapper {
     @Mapping(source = "id", target = "modelId")
     @Mapping(source = "brand.id", target = "brandId")
     @Mapping(source = "name", target = "name")
+    ModelInfo toModelInfo(Model model);
 
-    ModelInfo toModalInfos(Model model);
-    List<ModalInfo> toModalInfos(Model model);
+    List<ModelInfo> toModelInfos(List<Model> modelInfos);
 
 }
