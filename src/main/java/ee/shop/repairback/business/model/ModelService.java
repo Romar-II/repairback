@@ -17,14 +17,9 @@ public class ModelService {
     private final ModelMapper modelMapper;
 
 
-    public List<ModelInfo> getModels (Integer brandId) {
-
-        List<Model> modelInfos = modelRepository.findByBrandId(brandId);
-        return createModelInfos (modelInfos);
+    public List<Model> getModels (Integer brandId) {
+        return modelRepository.findByBrandId(brandId);
     }
-
-    private List<ModelInfo> createModelInfos(List<Model> modelInfos) {
-        return modelMapper.toModalInfos(modelInfos);
     }
 
 
