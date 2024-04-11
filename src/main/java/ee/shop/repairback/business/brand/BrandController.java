@@ -13,7 +13,7 @@ import java.util.List;
 public class BrandController {
     private BrandService brandService;
 
-    @GetMapping("/repair/brand")
+    @GetMapping("/brands")
 
     public List<BrandInfo> getBrands(){
         return brandService.getBrands();

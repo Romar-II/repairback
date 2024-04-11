@@ -16,7 +16,7 @@ public class ModelController {
     private ModelService modelService;
 
 
-    @GetMapping("/repair/model/{brandId}")
+    @GetMapping("/models/{brandId}")
 
    public List<ModelInfo> getModel(@PathVariable Integer brandId){
 

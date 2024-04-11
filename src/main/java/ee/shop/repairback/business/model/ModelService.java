@@ -11,6 +11,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
+
 public class ModelService {
 
     private final ModelRepository modelRepository;
