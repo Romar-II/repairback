@@ -16,10 +16,10 @@ public class ModelService {
     private final ModelRepository modelRepository;
     private final ModelMapper modelMapper;
 
-
-    public List<Model> getModels (Integer brandId) {
-        return modelRepository.findByBrandId(brandId);
-    }
+    public List<ModelInfo> getModels(Integer brandId) {
+        List<Model> modelList = modelRepository.findByBrandId(brandId);
+        List<ModelInfo> modelInfos = modelMapper.toModelInfos(modelList);
+        return modelInfos ;
     }
 
 
