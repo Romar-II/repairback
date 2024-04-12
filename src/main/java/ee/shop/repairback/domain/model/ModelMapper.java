@@ -9,7 +9,6 @@ import java.util.List;
 public interface ModelMapper {
 
     @Mapping(source = "id", target = "modelId")
-    @Mapping(source = "brand.id", target = "brandId")
     @Mapping(source = "name", target = "name")
     ModelInfo toModelInfo(Model model);
 
