@@ -17,3 +17,13 @@ INSERT INTO repair.repair_main_category (id, name) VALUES (3, 'Elekter');
 INSERT INTO repair.repair_main_category (id, name) VALUES (4, 'Kere');
 INSERT INTO repair.repair_main_category (id, name) VALUES (5, 'Rehvid');
 INSERT INTO repair.repair_main_category (id, name) VALUES (6, 'Klaasid');
+
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (1, 6, 'Esiklaas');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (2, 6, 'Tagaklaas');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (3, 6, 'Küljeklaas');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (4, 6, 'Siseklaas');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (5, 6, 'Katuseklaas');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (6, 1, 'Põrr-võrr');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (7, 2, 'Sillad');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (8, 3, 'Tuled');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (9, 4, 'Värvitööd');
