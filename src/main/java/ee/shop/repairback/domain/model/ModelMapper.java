@@ -9,7 +9,7 @@ import java.util.List;
 public interface ModelMapper {
 
     @Mapping(source = "id", target = "modelId")
-    @Mapping(source = "name", target = "name")
+    @Mapping(source = "name", target = "modelName")
     ModelInfo toModelInfo(Model model);
 
     List<ModelInfo> toModelInfos(List<Model> modelInfos);

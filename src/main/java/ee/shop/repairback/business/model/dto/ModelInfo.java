@@ -17,8 +17,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class ModelInfo implements Serializable {
     private Integer modelId;
-    private Integer brandId;
     @NotNull
     @Size(max = 255)
-    private String name;
+    private String modelName;
 }
