@@ -12,7 +12,7 @@ import java.util.List;
 
 public class RepairMainCategoryController {
     private RepairMainCategoryService repairMainCategoryService;
-    @GetMapping("/maincategory")
+    @GetMapping("/repair/maincategories")
 
 
     public List<RepairMainCategoryInfo> getRepairMainCategory(){
