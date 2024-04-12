@@ -16,6 +16,7 @@ public class BrandController {
     @GetMapping("/brands")
 
     public List<BrandInfo> getBrands(){
+        System.out.println("Testimine jõudsi siia");
         return brandService.getBrands();
 
     }
