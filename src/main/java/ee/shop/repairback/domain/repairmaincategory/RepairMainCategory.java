@@ -2,6 +2,7 @@ package ee.shop.repairback.domain.repairmaincategory;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,8 +16,10 @@ public class RepairMainCategory {
     @Column(name = "id", nullable = false)
     private Integer id;
 
+
+    @Size(max = 255)
     @NotNull
     @Column(name = "name", nullable = false)
-    private Integer name;
+    private String name;
 
 }

@@ -89,7 +89,7 @@ CREATE TABLE repair_item (
 -- Table: repair_main_category
 CREATE TABLE repair_main_category (
                                       id serial  NOT NULL,
-                                      name int  NOT NULL,
+                                      name varchar(255)  NOT NULL,
                                       CONSTRAINT repair_main_category_pk PRIMARY KEY (id)
 );
 
