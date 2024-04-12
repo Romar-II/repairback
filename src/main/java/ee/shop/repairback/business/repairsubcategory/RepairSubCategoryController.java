@@ -16,7 +16,7 @@ public class RepairSubCategoryController {
 
     private final RepairSubCategoryService repairSubCategoryService;
 
-    @GetMapping("/repair/subcategories/{this.selectedRepairMainCategoryId}")
+    @GetMapping("/repair/subcategories/{selectedRepairMainCategoryId}")
 
     public List<RepairSubCategoryInfo> getSubCategoryService(@PathVariable Integer selectedRepairMainCategoryId) {
         List<RepairSubCategoryInfo> repairSubCategoryInfos = repairSubCategoryService.getSubCategories(selectedRepairMainCategoryId);
