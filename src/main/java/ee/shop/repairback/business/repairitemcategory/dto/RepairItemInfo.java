@@ -16,7 +16,7 @@ public class RepairItemInfo implements Serializable {
     Integer repairItemId;
     @NotNull
     @Size(max = 255)
-    String repairItemName;
+    String repairItemCategoryName;
     @NotNull
     BigDecimal price;
 }

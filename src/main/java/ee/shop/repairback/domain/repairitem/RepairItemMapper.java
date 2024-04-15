@@ -9,8 +9,8 @@ import java.util.List;
 public interface RepairItemMapper {
 
     @Mapping(source = "id", target = "repairItemId")
-    @Mapping(source = "name", target = "repairItemName")
-   // @Mapping(source = "price", target = "price")  PS! hiljem kasutame seda ka
+    @Mapping(source = "name", target = "repairItemCategoryName")
+   // @Mapping(source = "price", target = "price")  PS! hiljem kasutame
 
     RepairItemInfo toRepairItemInfo (RepairItem repairItem);
     List<RepairItemInfo> toRepairItemInfos (List<RepairItem> repairItem);
