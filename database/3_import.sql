@@ -88,6 +88,23 @@ INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES 
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (40, 21, 'Värvitööd', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (41, 21, 'Plekitööd', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (42, 21, 'Kiletamine', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (43, 9, 'Vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (44, 20, 'Vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (45, 21, 'Vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (46, 13, 'Augu parandus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (47, 13, 'Rehvi vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (48, 13, 'Rehvi rõhu kontroll ja täitmine', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (49, 10, 'Augu parandus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (50, 10, 'Rehvi vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (51, 10, 'Rehvi rõhu kontroll ja täitmine', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (52, 11, 'Augu parandus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (53, 11, 'Rehvi vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (54, 11, 'Rehvi rõhu kontroll ja täitmine', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (55, 12, 'Augu parandus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (56, 12, 'Rehvi vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (57, 12, 'Rehvi rõhu kontroll ja täitmine', 0.00);
+
+
 
 
 
