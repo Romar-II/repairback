@@ -107,6 +107,17 @@ INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES 
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (59, 8, 'Tulede kontroll ja reguleerimine', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (60, 19, 'Aku vahetus', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (61, 19, 'Kas täkku saab?', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (62, 7, 'Ülevaatus/kontroll', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (63, 7, 'Vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (64, 7, 'Sport tuning', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (65, 17, 'Ülevaatus/kontroll', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (66, 17, 'Vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (67, 17, 'Sport tuning', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (68, 18, 'Vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (69, 18, 'Remont', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (70, 18, 'Puhastus', 0.00);
+
+
 
 
 
