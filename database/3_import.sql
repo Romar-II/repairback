@@ -103,6 +103,11 @@ INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES 
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (55, 12, 'Augu parandus', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (56, 12, 'Rehvi vahetus', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (57, 12, 'Rehvi rõhu kontroll ja täitmine', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (58, 8, 'Pirni vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (59, 8, 'Tulede kontroll ja reguleerimine', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (60, 19, 'Aku vahetus', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (61, 19, 'Kas täkku saab?', 0.00);
+
 
 
 
