@@ -26,7 +26,7 @@ INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUE
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (6, 1, 'Põrr-võrr');
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (7, 2, 'Sillad');
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (8, 3, 'Tuled');
-INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (9, 4, 'Värvitööd');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (9, 4, 'Uksed');
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (10, 5, '1 rehv');
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (11, 5, '2 rehvi');
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (12, 5, '3 rehvi');
@@ -34,6 +34,15 @@ INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUE
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (14, 1, 'Drr-Dõr-Dõr-Buh');
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (15, 1, 'Tuk-Tuk-Tik-Tak');
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (16, 1, 'Vedelikud');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (17, 2, 'Vedrustus');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (18, 2, 'Veljed');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (19, 3, 'Aku');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (20, 4, 'Kapott');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (21, 4, 'Pagasnik');
+
+
+
+
 
 
 
@@ -70,5 +79,15 @@ INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES 
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (31, 6, 'Mootori keti vahetus', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (32, 6, 'Uus mootor', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (33, 6, 'Chip tuning', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (34, 9, 'Värvitööd', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (35, 9, 'Plekitööd', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (36, 9, 'Kiletamine', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (37, 20, 'Värvitööd', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (38, 20, 'Plekitööd', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (39, 20, 'Kiletamine', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (40, 21, 'Värvitööd', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (41, 21, 'Plekitööd', 0.00);
+INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (42, 21, 'Kiletamine', 0.00);
+
 
 
