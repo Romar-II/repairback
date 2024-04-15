@@ -1,4 +1,4 @@
-package ee.shop.repairback.business;
+package ee.shop.repairback.business.repairitemcategory;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
