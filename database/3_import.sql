@@ -27,6 +27,11 @@ INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUE
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (7, 2, 'Sillad');
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (8, 3, 'Tuled');
 INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (9, 4, 'Värvitööd');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (10, 5, '1 rehv');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (11, 5, '2 rehvi');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (12, 5, '3 rehvi');
+INSERT INTO repair.repair_sub_category (id, repair_main_category_id, name) VALUES (13, 5, 'Kõik rehvid');
+
 
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (1, 1, 'Täkke parandus', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (2, 1, 'Klaasi vahetus', 0.00);
