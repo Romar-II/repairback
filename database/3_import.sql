@@ -61,6 +61,28 @@ INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES 
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (13, 5, 'Täkke parandus', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (14, 5, 'Klaasi vahetus', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (15, 5, 'Toneerimine', 0.00);
+
+INSERT INTO repair.category (id, name) VALUES (1, 'Mootor');
+INSERT INTO repair.category (id, name) VALUES (2, 'Veermik');
+INSERT INTO repair.category (id, name) VALUES (3, 'Elekter');
+INSERT INTO repair.category (id, name) VALUES (4, 'Kere');
+INSERT INTO repair.category (id, name) VALUES (5, 'Rattad');
+INSERT INTO repair.category (id, name) VALUES (6, 'Klaasid');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (1, 1, 'Õlid');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (2, 1, 'Laagrid');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (3, 1, 'Kilowatid');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (4, 1, 'Detsibelid');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (5, 2, 'Amordid');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (6, 2, 'Vedrustus');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (7, 2, 'Laagrid');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (8, 2, 'Raam');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (9, 3, 'Tuled');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (10, 3, 'Andurid');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (11, 3, 'Süütesüsteem');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (12, 4, 'Uksed');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (13, 4, 'Katus');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (14, 4, 'Pagasnik');
+INSERT INTO repair.sub_category (id, category_id, name) VALUES (15, 4, 'Kapott');
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (16, 16, 'Õlivahetus', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (17, 16, 'Klaasipesu vedeliku täitmine', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (18, 16, 'Tosooli täitmine', 0.00);

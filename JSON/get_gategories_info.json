@@ -1,0 +1,23 @@
+[
+  {
+    "mainCategoryId": 1,
+    "mainCategoryName": "Engine",
+    "isCollapsed": true,
+    "subCategories": [
+      {
+        "subCategoryId": 1,
+        "subCategoryName": "Oil"
+      },
+      {
+        "subCategoryId": 2,
+        "subCategoryName": "Shaft"
+      }
+    ]
+  },
+  {
+    "mainCategoryId": 2,
+    "mainCategoryName": "Wheels",
+    "subCategories": []
+  }
+
+]
