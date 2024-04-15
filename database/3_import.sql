@@ -139,6 +139,34 @@ INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES 
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (69, 18, 'Remont', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (70, 18, 'Puhastus', 0.00);
 
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (1, 1, 1, 'Mobil', 25.000, 'Parim õli, päriselt ka 5l', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (2, 1, 1, 'Rapsiõli', 5.000, 'Tervislik ja looduslik, 2l', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (3, 1, 2, 'Head laagrid', 500.000, 'Parimad laagrid SKF', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (4, 1, 2, 'Hiina laagrid', 50.000, 'Laagrid SKF', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (5, 1, 3, 'Kilowatte juurde', 100.000, 'Lisame Kw juurde', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (6, 1, 3, 'Kilowatte vähemaks', 50.000, 'Võtame Kw vähemaks', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (7, 2, 5, 'Ilusad amordid', 500.000, 'Roosad', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (8, 2, 5, 'Tõhusad amordid', 500.000, 'Punased', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (9, 2, 5, 'Kõvad amordid', 1000.000, 'Mustad', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (10, 2, 6, 'Hea vedrustus', 20000.000, 'Kõik vedrud maailmas', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (11, 2, 7, 'Head laagrid', 75.000, 'Parimad laagrid SKF', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (12, 2, 7, 'Hiina laagrid', 35.000, 'Laagrid SKF', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (13, 2, 8, 'Uus raam', 10000.000, 'Uus raam sinu autole', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (14, 3, 9, 'Ilusad tuled', 10.000, 'Kõik kiidavad', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (15, 3, 9, 'Koledad tuled', 5.000, 'Keegi ei kiida', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (16, 3, 9, 'Säravad tuled', 100.000, 'väga nähtavad', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (17, 3, 10, 'Parkimise andurid', 20.000, 'Parkimse abi', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (18, 3, 10, 'Gaasi andurid', 40.000, 'Gaasi abi', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (19, 3, 11, 'Süütesüsteem', 150.000, 'Auto käivitumiseks', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (20, 4, 12, 'Uksed', 5000.000, 'Uues uksed', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (21, 4, 13, 'Katus', 6000.000, 'Uus katus', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (22, 4, 14, 'Pagasnik', 6000.000, 'Uus pagasnik', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (23, 4, 15, 'Kapott', 1000.000, 'Uus kapott', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (24, 5, null, 'Rehvid', 10.000, 'Uus rehv', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (25, 5, null, 'Veljed', 20.000, 'Uus velg', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (26, 6, null, 'Esiklaas', 500.000, 'Uus esiklaas', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (27, 6, null, 'Tagaklaas', 500.000, 'Uus tagaklaas', 'A');
+INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (28, 6, null, 'Küljeklaas', 500.000, 'Uus küljeklaas', 'A');
 
 
 
