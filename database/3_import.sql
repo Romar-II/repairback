@@ -139,6 +139,23 @@ INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES 
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (69, 18, 'Remont', 0.00);
 INSERT INTO repair.repair_item (id, repair_sub_category_id, name, price) VALUES (70, 18, 'Puhastus', 0.00);
 
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (1, 1, 1995, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (2, 1, 1996, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (3, 1, 1997, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (4, 1, 1998, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (5, 2, 2000, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (6, 2, 2001, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (7, 2, 2002, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (8, 2, 2003, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (9, 3, 2002, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (10, 3, 2003, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (11, 3, 2004, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (12, 3, 2005, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (13, 4, 2006, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (14, 4, 2007, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (15, 4, 2008, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (16, 4, 2009, 2);
+
 
 
 
