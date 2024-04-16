@@ -17,11 +17,11 @@ public class YearController {
     private YearService yearService;
 
 
-    @GetMapping("/years/{yearId}")
+    @GetMapping("/years/{modelId}")
 
     public List<YearInfo> getYear(@PathVariable Integer modelId){
+        List<YearInfo> years = yearService.getYears(modelId);
 
-        return yearService.getYears(modelId);
-
+        return years;
     }
 }

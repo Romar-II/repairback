@@ -5,6 +5,8 @@ import ee.shop.repairback.business.year.dto.YearInfo;
 import ee.shop.repairback.domain.model.Model;
 import ee.shop.repairback.domain.model.ModelMapper;
 import ee.shop.repairback.domain.model.ModelRepository;
+import ee.shop.repairback.domain.year.YearMapper;
+import ee.shop.repairback.domain.year.YearRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
