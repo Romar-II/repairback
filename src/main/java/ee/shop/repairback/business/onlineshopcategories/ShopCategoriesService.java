@@ -29,7 +29,7 @@ public class ShopCategoriesService {
         for (CategoryWithSubCategoryInfo categoryInfo : categoryInfos) {
             List<SubCategory> subCategories = subCategoryRepository.findSubCategoryBy(categoryInfo.getCategoryId());
             List<SubCategoryInfo> subCategoryInfos = subCategoryMapper.toSubCategoryInfos(subCategories);
-            categoryInfo.setSubCategoryInfoList(subCategoryInfos);
+            categoryInfo.setSubCategories(subCategoryInfos);
         }
         return categoryInfos;
 
