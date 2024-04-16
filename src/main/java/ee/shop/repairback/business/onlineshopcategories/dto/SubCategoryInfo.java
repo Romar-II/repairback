@@ -17,7 +17,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class SubCategoryInfo implements Serializable {
     Integer subCategoryId;
-    Integer categoryId;
     @NotNull
     @Size(max = 255)
     String subCategoryName;
