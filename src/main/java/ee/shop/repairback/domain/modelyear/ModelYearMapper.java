@@ -13,8 +13,8 @@ public interface ModelYearMapper {
 
     @Mapping(source = "number", target ="yearNumber")
     @Mapping(source = "id", target = "yearId")
-    ModelYearInfo toDto(ModelYear modelYear);
+    ModelYearInfo toModelYearInfo(ModelYear modelYear);
 
-    //List<ModelYearInfo> toModelInfos(List<Model> models);
+    List<ModelYearInfo> toModelYearInfos(List<Year> years);
 
 }
