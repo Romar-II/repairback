@@ -10,7 +10,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@AllArgsConstructor
 @Table(name = "brand", schema = "repair")
 public class Brand {
     @Id

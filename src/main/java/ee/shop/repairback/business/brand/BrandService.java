@@ -11,12 +11,10 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-
 public class BrandService {
 
     private final BrandRepository brandRepository;
     private final BrandMapper brandMapper;
-
 
     public List<BrandInfo> getBrands() {
         List<Brand> brands = brandRepository.findAll();
