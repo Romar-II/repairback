@@ -15,6 +15,6 @@ public interface ModelYearMapper {
     @Mapping(source = "id", target = "yearId")
     ModelYearInfo toModelYearInfo(ModelYear modelYear);
 
-    List<ModelYearInfo> toModelYearInfos(List<Year> years);
+    List<ModelYearInfo> toModelYearInfos(List<ModelYear> modelYears);
 
 }
