@@ -14,5 +14,5 @@ public interface ProductMapper {
     @Mapping(source = "price", target = "productPrice")
     ProductInfo toProductInfo(Product product);
 
-    List<ProductInfo> toProductInfos(List<Product> productList);
+    List<ProductInfo> toProductInfos(List<Product> products);
 }
