@@ -1,4 +1,4 @@
-package ee.shop.repairback.business.onlineshopcategories.dto;
+package ee.shop.repairback.business.category.dto;
 
 import ee.shop.repairback.domain.subcategory.SubCategory;
 import jakarta.validation.constraints.NotNull;
@@ -16,8 +16,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SubCategoryInfo implements Serializable {
-    Integer subCategoryId;
+    private Integer subCategoryId;
     @NotNull
     @Size(max = 255)
-    String subCategoryName;
+    private String subCategoryName;
 }

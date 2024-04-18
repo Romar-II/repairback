@@ -1,6 +1,6 @@
 package ee.shop.repairback.domain.product;
 
-import ee.shop.repairback.business.shopproducts.dto.ProductInfo;
+import ee.shop.repairback.business.product.dto.ProductInfo;
 import org.mapstruct.*;
 
 import java.util.List;

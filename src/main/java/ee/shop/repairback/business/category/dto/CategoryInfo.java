@@ -1,4 +1,4 @@
-package ee.shop.repairback.business.onlineshopcategories.dto;
+package ee.shop.repairback.business.category.dto;
 
 import ee.shop.repairback.domain.category.Category;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryWithSubCategoryInfo implements Serializable {
+public class CategoryInfo implements Serializable {
     private Integer categoryId;
     private String categoryName;
     private List<SubCategoryInfo> subCategories;

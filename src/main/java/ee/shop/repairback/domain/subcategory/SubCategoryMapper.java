@@ -1,6 +1,6 @@
 package ee.shop.repairback.domain.subcategory;
 
-import ee.shop.repairback.business.onlineshopcategories.dto.SubCategoryInfo;
+import ee.shop.repairback.business.category.dto.SubCategoryInfo;
 import org.mapstruct.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package ee.shop.repairback.business.shopproducts.dto;
+package ee.shop.repairback.business.product.dto;
 
 import ee.shop.repairback.domain.product.Product;
 import lombok.AllArgsConstructor;
