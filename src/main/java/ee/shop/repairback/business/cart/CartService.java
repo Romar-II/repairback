@@ -1,5 +1,6 @@
 package ee.shop.repairback.business.cart;
 
+import ee.shop.repairback.business.cart.dto.OrderInfo;
 import ee.shop.repairback.business.cart.dto.OrderItemRequest;
 import ee.shop.repairback.domain.order.Order;
 import ee.shop.repairback.domain.order.OrderRepository;
@@ -10,9 +11,10 @@ import ee.shop.repairback.domain.product.Product;
 import ee.shop.repairback.domain.product.ProductRepository;
 import ee.shop.repairback.domain.user.User;
 import ee.shop.repairback.domain.user.UserRepository;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -46,7 +48,7 @@ public class CartService {
         Product product = productRepository.getReferenceById(productId);
         Order order;
         if(orderRepository.openOrderExists(user.getId())){
-            order = orderRepository.findOrderBy(userId);
+            order = orderRepository.findPendingOrderBy(userId);
         } else {
             order = new Order();
             order.setUser(user);
@@ -58,5 +60,14 @@ public class CartService {
         orderItem.setOrder(order);
         orderItem.setProduct(product);
         orderItemRepository.save(orderItem);
+    }
+
+    public Integer updateCartQty(Integer userId) {
+        Order order = orderRepository.findPendingOrderBy(userId);
+
+        List<OrderItem> orderinfo = orderItemRepository.findOrderItemBy(order.getId());
+        Integer itemCount= orderinfo.size();
+
+        return itemCount;
     }
 }
