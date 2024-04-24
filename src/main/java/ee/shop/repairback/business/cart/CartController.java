@@ -17,6 +17,10 @@ public class CartController {
     public void addOrderItemToCart(@RequestParam Integer userId, @RequestParam Integer productId) {
         cartService.addOrderItemToCart(userId, productId);
     }
+    @PostMapping("/cart/repairitem")
+    public void addRepairOrderItemToCart(@RequestParam Integer userId, @RequestParam Integer repairItemId) {
+        cartService.addRepairOrderItemToCart(userId, repairItemId);
+    }
     @GetMapping("/cart/update/{userId}")
     public Integer  updateCartQty(@PathVariable Integer userId){
         return cartService.updateCartQty(userId);

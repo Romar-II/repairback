@@ -11,6 +11,9 @@ import ee.shop.repairback.domain.product.Product;
 import ee.shop.repairback.domain.product.ProductMapper;
 import ee.shop.repairback.domain.product.ProductRepository;
 import ee.shop.repairback.domain.product.ProductWithQtyMapper;
+import ee.shop.repairback.domain.repairitem.RepairItem;
+import ee.shop.repairback.domain.repairitem.RepairItemMapper;
+import ee.shop.repairback.domain.repairitem.RepairItemRepository;
 import ee.shop.repairback.domain.user.User;
 import ee.shop.repairback.domain.user.UserRepository;
 import jakarta.validation.constraints.NotNull;
@@ -33,6 +36,8 @@ public class CartService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
     private final ProductWithQtyMapper productWithQtyMapper;
+    private final RepairItemMapper repairItemMapper;
+    private final RepairItemRepository repairItemRepository;
 
     public void addOrderItemToCart(OrderItemRequest orderItemRequest) {
         OrderItem orderItem = new OrderItem();
@@ -81,6 +86,9 @@ public class CartService {
         List<OrderItem> orderItems = orderItemRepository.findOrderItemBy(order.getId());
         List<ProductWithQuantityInfo> productWithQuantityInfos = new ArrayList<>();
         for (OrderItem orderItem : orderItems) {
+            if(orderItem.getRepairItem()!=null){
+                break;
+            }
             Product product = orderItem.getProduct();
             boolean notOnTheList = true;
             for (ProductWithQuantityInfo existingProduct : productWithQuantityInfos) {
@@ -101,5 +109,24 @@ public class CartService {
             }
         }
         return productWithQuantityInfos;
+    }
+
+    public void addRepairOrderItemToCart(Integer userId, Integer repairItemId) {
+        User user = userRepository.getReferenceById(userId);
+        RepairItem repairItem = repairItemRepository.getReferenceById(repairItemId);
+        Order order;
+        if (orderRepository.openOrderExists(user.getId())) {
+            order = orderRepository.findPendingOrderBy(userId);
+        } else {
+            order = new Order();
+            order.setUser(user);
+            order.setStatus("P");
+            orderRepository.save(order);
+        }
+        OrderItem orderItem = new OrderItem();
+
+        orderItem.setOrder(order);
+        orderItem.setRepairItem(repairItem);
+        orderItemRepository.save(orderItem);
     }
 }
