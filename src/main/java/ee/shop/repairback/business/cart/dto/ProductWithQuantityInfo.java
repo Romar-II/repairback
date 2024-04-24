@@ -18,6 +18,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class ProductWithQuantityInfo implements Serializable {
     Integer productId;
+    Integer repairItemId;
     @Size(max = 255)
     String productName;
     BigDecimal productPrice;
