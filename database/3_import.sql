@@ -185,6 +185,9 @@ INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (
 INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (15, 4, 2008, 2);
 INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (16, 4, 2009, 2);
 
+INSERT INTO repair.role (id, name) VALUES (1, 'Admin');
+INSERT INTO repair.role (id, name) VALUES (2, 'Customer');
+
 INSERT INTO repair."user" (id, role_id, username, password, status) VALUES (1, 1, 'Admin', 'Admin123', 'A');
 INSERT INTO repair."user" (id, role_id, username, password, status) VALUES (4, 1, 'Alar', '123', 'A');
 INSERT INTO repair."user" (id, role_id, username, password, status) VALUES (5, 1, 'Marek', '123', 'A');
