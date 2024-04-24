@@ -86,24 +86,33 @@ public class CartService {
         List<OrderItem> orderItems = orderItemRepository.findOrderItemBy(order.getId());
         List<ProductWithQuantityInfo> productWithQuantityInfos = new ArrayList<>();
         for (OrderItem orderItem : orderItems) {
-            if(orderItem.getRepairItem()!=null){
-                break;
-            }
             Product product = orderItem.getProduct();
+            RepairItem repairItem = orderItem.getRepairItem();
             boolean notOnTheList = true;
             for (ProductWithQuantityInfo existingProduct : productWithQuantityInfos) {
-                int existinginListProduct= existingProduct.getProductId();
-                int productImtryingToAdd= product.getId();
-                if (Objects.equals(existingProduct.getProductId(), product.getId())) {
+                if (product != null && Objects.equals(existingProduct.getProductId(), product.getId())) {
+                    existingProduct.setQty(existingProduct.getQty() + 1);
+                    notOnTheList = false;
+                } else if (repairItem != null && Objects.equals(existingProduct.getRepairItemId(), repairItem.getId())) {
                     existingProduct.setQty(existingProduct.getQty() + 1);
                     notOnTheList = false;
                 }
             }
-            if (notOnTheList) {
+            if (repairItem == null && notOnTheList) {
                 ProductWithQuantityInfo productWithQuantityInfo = new ProductWithQuantityInfo();
                 productWithQuantityInfo.setProductId(product.getId());
+                productWithQuantityInfo.setRepairItemId(0);
                 productWithQuantityInfo.setProductName(product.getName());
                 productWithQuantityInfo.setProductPrice(product.getPrice());
+                productWithQuantityInfo.setQty(1);
+                productWithQuantityInfos.add(productWithQuantityInfo);
+            }
+            if (product == null && notOnTheList) {
+                ProductWithQuantityInfo productWithQuantityInfo = new ProductWithQuantityInfo();
+                productWithQuantityInfo.setProductId(0);
+                productWithQuantityInfo.setRepairItemId(repairItem.getId());
+                productWithQuantityInfo.setProductName(repairItem.getName());
+                productWithQuantityInfo.setProductPrice(repairItem.getPrice());
                 productWithQuantityInfo.setQty(1);
                 productWithQuantityInfos.add(productWithQuantityInfo);
             }
