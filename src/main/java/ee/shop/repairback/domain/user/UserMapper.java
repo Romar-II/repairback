@@ -5,10 +5,10 @@ import org.mapstruct.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
 public interface UserMapper {
-    User toEntity(UserInfo userInfo);
 
-    UserInfo toDto(User user);
+    @Mapping(source = "id",target = "userId")
+    @Mapping(source = "role.name",target = "roleName")
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    User partialUpdate(UserInfo userInfo, @MappingTarget User user);
+    UserInfo toUserInfo(User user);
+
 }
