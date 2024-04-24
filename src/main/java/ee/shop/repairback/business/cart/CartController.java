@@ -1,9 +1,10 @@
 package ee.shop.repairback.business.cart;
 
-import ee.shop.repairback.business.cart.dto.OrderItemRequest;
-import jakarta.validation.Valid;
+import ee.shop.repairback.business.cart.dto.ProductWithQuantityInfo;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -19,5 +20,11 @@ public class CartController {
     @GetMapping("/cart/update/{userId}")
     public Integer  updateCartQty(@PathVariable Integer userId){
         return cartService.updateCartQty(userId);
+    }
+
+    @GetMapping("/cart/items/{userId}")
+    public List<ProductWithQuantityInfo> getCartItems(@PathVariable Integer userId){
+
+        return cartService.getCartItems(userId);
     }
 }
