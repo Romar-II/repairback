@@ -9,6 +9,29 @@ INSERT INTO repair.model (id, brand_id, name) VALUES (1, 1, 'A5');
 INSERT INTO repair.model (id, brand_id, name) VALUES (2, 1, 'A6');
 INSERT INTO repair.model (id, brand_id, name) VALUES (3, 2, 'M4');
 INSERT INTO repair.model (id, brand_id, name) VALUES (4, 2, 'M5');
+INSERT INTO repair.model (id, brand_id, name) VALUES (5, 1, 'A4');
+INSERT INTO repair.model (id, brand_id, name) VALUES (6, 1, 'S4');
+INSERT INTO repair.model (id, brand_id, name) VALUES (7, 1, 'S5');
+INSERT INTO repair.model (id, brand_id, name) VALUES (8, 1, 'A8');
+INSERT INTO repair.model (id, brand_id, name) VALUES (9, 2, 'i8');
+INSERT INTO repair.model (id, brand_id, name) VALUES (12, 1, 'A7');
+INSERT INTO repair.model (id, brand_id, name) VALUES (13, 1, 'S7');
+INSERT INTO repair.model (id, brand_id, name) VALUES (14, 3, 'A140');
+INSERT INTO repair.model (id, brand_id, name) VALUES (15, 3, 'B200');
+INSERT INTO repair.model (id, brand_id, name) VALUES (16, 3, 'C350');
+INSERT INTO repair.model (id, brand_id, name) VALUES (17, 3, 'S500');
+INSERT INTO repair.model (id, brand_id, name) VALUES (18, 5, 'S70');
+INSERT INTO repair.model (id, brand_id, name) VALUES (19, 5, 'S80');
+INSERT INTO repair.model (id, brand_id, name) VALUES (20, 5, 'S90');
+INSERT INTO repair.model (id, brand_id, name) VALUES (21, 5, 'XC60');
+INSERT INTO repair.model (id, brand_id, name) VALUES (22, 5, 'XC70');
+INSERT INTO repair.model (id, brand_id, name) VALUES (23, 5, 'XC90');
+INSERT INTO repair.model (id, brand_id, name) VALUES (24, 4, 'Arteon');
+INSERT INTO repair.model (id, brand_id, name) VALUES (25, 4, 'Golf');
+INSERT INTO repair.model (id, brand_id, name) VALUES (26, 4, 'Passat');
+INSERT INTO repair.model (id, brand_id, name) VALUES (27, 4, 'Beetle');
+INSERT INTO repair.model (id, brand_id, name) VALUES (28, 4, 'Touareg');
+
 
 
 INSERT INTO repair.repair_main_category (id, name) VALUES (1, 'Mootor');
