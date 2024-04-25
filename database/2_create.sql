@@ -143,6 +143,18 @@ CREATE TABLE "user"
     CONSTRAINT user_pk PRIMARY KEY (id)
 );
 
+CREATE TABLE registered_users (
+                       id SERIAL PRIMARY KEY,
+                       username VARCHAR(50) UNIQUE NOT NULL,
+                       password VARCHAR(255) NOT NULL,
+                       email VARCHAR(100) UNIQUE NOT NULL,
+                       car_brand VARCHAR(50) NOT NULL,
+                       car_model VARCHAR(50) NOT NULL,
+                       car_year INT NOT NULL,
+                       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- foreign keys
 -- Reference: car_model_year (table: car)
 ALTER TABLE car
