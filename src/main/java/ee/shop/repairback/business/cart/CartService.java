@@ -1,5 +1,6 @@
 package ee.shop.repairback.business.cart;
 
+import ee.shop.repairback.business.Status;
 import ee.shop.repairback.business.cart.dto.OrderItemRequest;
 import ee.shop.repairback.business.cart.dto.ProductWithQuantityInfo;
 import ee.shop.repairback.domain.order.Order;
@@ -16,11 +17,9 @@ import ee.shop.repairback.domain.repairitem.RepairItemMapper;
 import ee.shop.repairback.domain.repairitem.RepairItemRepository;
 import ee.shop.repairback.domain.user.User;
 import ee.shop.repairback.domain.user.UserRepository;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.*;
 
 @Service
@@ -39,19 +38,6 @@ public class CartService {
     private final RepairItemMapper repairItemMapper;
     private final RepairItemRepository repairItemRepository;
 
-    public void addOrderItemToCart(OrderItemRequest orderItemRequest) {
-        OrderItem orderItem = new OrderItem();
-//        orderItem.set
-
-
-//        OrderItem orderItem = createOrderItem(orderItemRequest);
-        orderItemRepository.save(orderItem);
-    }
-
-//    private OrderItem createOrderItem(OrderItemRequest orderItemRequest) {
-//        OrderItem orderItem = orderItemMapper.toOrderItem(orderItemRequest);
-//        return orderItem;
-//    }
 
     public void addOrderItemToCart(Integer userId, Integer productId) {
         User user = userRepository.getReferenceById(userId);
@@ -86,6 +72,11 @@ public class CartService {
         Order order = orderRepository.findPendingOrderBy(userId);
         List<OrderItem> orderItems = orderItemRepository.findOrderItemBy(order.getId());
         List<ProductWithQuantityInfo> productWithQuantityInfos = new ArrayList<>();
+        fillDtoWithInfo(orderItems, productWithQuantityInfos);
+        return productWithQuantityInfos;
+    }
+
+    private static void fillDtoWithInfo(List<OrderItem> orderItems, List<ProductWithQuantityInfo> productWithQuantityInfos) {
         for (OrderItem orderItem : orderItems) {
             Product product = orderItem.getProduct();
             RepairItem repairItem = orderItem.getRepairItem();
@@ -100,25 +91,32 @@ public class CartService {
                 }
             }
             if (repairItem == null && notOnTheList) {
-                ProductWithQuantityInfo productWithQuantityInfo = new ProductWithQuantityInfo();
-                productWithQuantityInfo.setProductId(product.getId());
-                productWithQuantityInfo.setRepairItemId(0);
-                productWithQuantityInfo.setProductName(product.getName());
-                productWithQuantityInfo.setProductPrice(product.getPrice());
-                productWithQuantityInfo.setQty(1);
-                productWithQuantityInfos.add(productWithQuantityInfo);
+                fillDtoWithRepairItem(product, productWithQuantityInfos);
             }
             if (product == null && notOnTheList) {
-                ProductWithQuantityInfo productWithQuantityInfo = new ProductWithQuantityInfo();
-                productWithQuantityInfo.setProductId(0);
-                productWithQuantityInfo.setRepairItemId(repairItem.getId());
-                productWithQuantityInfo.setProductName(repairItem.getName());
-                productWithQuantityInfo.setProductPrice(repairItem.getPrice());
-                productWithQuantityInfo.setQty(1);
-                productWithQuantityInfos.add(productWithQuantityInfo);
+                fillDtoWithProduct(repairItem, productWithQuantityInfos);
             }
         }
-        return productWithQuantityInfos;
+    }
+
+    private static void fillDtoWithProduct(RepairItem repairItem, List<ProductWithQuantityInfo> productWithQuantityInfos) {
+        ProductWithQuantityInfo productWithQuantityInfo = new ProductWithQuantityInfo();
+        productWithQuantityInfo.setProductId(0);
+        productWithQuantityInfo.setRepairItemId(repairItem.getId());
+        productWithQuantityInfo.setProductName(repairItem.getName());
+        productWithQuantityInfo.setProductPrice(repairItem.getPrice());
+        productWithQuantityInfo.setQty(1);
+        productWithQuantityInfos.add(productWithQuantityInfo);
+    }
+
+    private static void fillDtoWithRepairItem(Product product, List<ProductWithQuantityInfo> productWithQuantityInfos) {
+        ProductWithQuantityInfo productWithQuantityInfo = new ProductWithQuantityInfo();
+        productWithQuantityInfo.setProductId(product.getId());
+        productWithQuantityInfo.setRepairItemId(0);
+        productWithQuantityInfo.setProductName(product.getName());
+        productWithQuantityInfo.setProductPrice(product.getPrice());
+        productWithQuantityInfo.setQty(1);
+        productWithQuantityInfos.add(productWithQuantityInfo);
     }
 
     public void addRepairOrderItemToCart(Integer userId, Integer repairItemId) {
@@ -138,5 +136,34 @@ public class CartService {
         orderItem.setOrder(order);
         orderItem.setRepairItem(repairItem);
         orderItemRepository.save(orderItem);
+    }
+
+    public void completePendingOrder(Integer userId) {
+        Order order = orderRepository.findPendingOrderBy(userId);
+        order.setStatus(Status.ACTIVE);
+        orderRepository.save(order);
+
+    }
+
+    public void deletePendingOrder(Integer userId) {
+        Order order = orderRepository.findPendingOrderBy(userId);
+        order.setStatus(Status.DEACTIVATED);
+        orderRepository.save(order);
+
+    }
+
+    public void addItemQtyInCart(Integer userId, Integer productId, Integer repairItemId) {
+        if (productId == 0) {
+            this.addRepairOrderItemToCart(userId, repairItemId);
+        }else{
+            this.addOrderItemToCart(userId, productId);
+        }
+    }
+
+    public void substractItemQtyFromCart(Integer userId, Integer productId, Integer repairItemId) {
+        Order order = orderRepository.findPendingOrderBy(userId);
+        Product product = productRepository.getReferenceById(productId);
+        RepairItem repairItem = repairItemRepository.getReferenceById(repairItemId);
+        orderItemRepository.deleteOrderItemBy(order, product, repairItem);
     }
 }
