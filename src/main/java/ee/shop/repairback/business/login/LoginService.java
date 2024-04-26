@@ -33,7 +33,7 @@ public class LoginService {
         user.setPassword(password);
         user.setStatus(Status.ACTIVE);
         Role role = roleRepository.getReferenceById(2);
-        role.setId(2);
+        user.setRole(role);
         userRepository.save(user);
 
     }
