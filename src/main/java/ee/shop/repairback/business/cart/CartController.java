@@ -24,7 +24,7 @@ public class CartController {
     }
 
     @GetMapping("/cart/update/{userId}")
-    public Integer updateCartQty(@PathVariable Integer userId) {
+    public Integer  updateCartQty(@PathVariable Integer userId){
         return cartService.updateCartQty(userId);
     }
 
@@ -38,15 +38,18 @@ public class CartController {
     public void deletePendingOrder(@RequestParam Integer userId) {
         cartService.deletePendingOrder(userId);
     }
+
     @PutMapping("/basket/order")
     public void completePendingOrder(@RequestParam Integer userId) {
         cartService.completePendingOrder(userId);
     }
+
     @PutMapping("/cartitem/add")
     public void addItemQtyInCart (@RequestParam Integer userId, @RequestParam Integer productId,@RequestParam Integer repairItemId){
         cartService.addItemQtyInCart(userId, productId, repairItemId);
     }
 
+    @DeleteMapping("/cartitem/substract")
     public void substractItemQtyFromCart(@RequestParam Integer userId, @RequestParam Integer productId, @RequestParam Integer repairItemId) {
         cartService.substractItemQtyFromCart(userId, productId, repairItemId);
     }

@@ -17,9 +17,11 @@ import ee.shop.repairback.domain.repairitem.RepairItemMapper;
 import ee.shop.repairback.domain.repairitem.RepairItemRepository;
 import ee.shop.repairback.domain.user.User;
 import ee.shop.repairback.domain.user.UserRepository;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 @Service
@@ -162,8 +164,14 @@ public class CartService {
 
     public void substractItemQtyFromCart(Integer userId, Integer productId, Integer repairItemId) {
         Order order = orderRepository.findPendingOrderBy(userId);
-        Product product = productRepository.getReferenceById(productId);
-        RepairItem repairItem = repairItemRepository.getReferenceById(repairItemId);
-        orderItemRepository.deleteOrderItemBy(order, product, repairItem);
+        if(repairItemId==0){
+            Product product = productRepository.getReferenceById(productId);
+            OrderItem orderItem = orderItemRepository.findFirstByProduct(product);
+            orderItemRepository.deleteById(orderItem.getId());
+        }else {
+            RepairItem repairItem=repairItemRepository.getReferenceById(repairItemId);
+            OrderItem orderItem = orderItemRepository.findFirstByRepairItem(repairItem);
+            orderItemRepository.deleteById(orderItem.getId());
+        }
     }
 }

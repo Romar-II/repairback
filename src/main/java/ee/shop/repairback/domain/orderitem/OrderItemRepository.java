@@ -17,9 +17,15 @@ public interface OrderItemRepository extends JpaRepository<OrderItem, Integer> {
       @Query("select Product from OrderItem o where o.order.id = ?1")
     List<OrderItem> findProductIdBY(Integer orderId);
 
+
     @Transactional
-    @Modifying
-    @Query("delete from OrderItem o where o.order.id = ?1 and (o.product.id = ?2 or o.repairItem.id = ?3)")
-    int deleteOrderItemBy(Order order, Product product, RepairItem repairItem);
+
+    OrderItem findFirstByProduct(Product product);
+
+    @Transactional
+
+    OrderItem findFirstByRepairItem(RepairItem repairItem);
+
+
 
 }
