@@ -64,8 +64,12 @@ public class CartService {
     public Integer updateCartQty(Integer userId) {
         Order order = orderRepository.findPendingOrderBy(userId);
         List<OrderItem> orderinfo = orderItemRepository.findOrderItemBy(order.getId());
+
+        if (orderinfo == null) {
+            return 0;
+        }
         Integer itemCount = orderinfo.size();
-//todo: if cart is empty
+
         return itemCount;
     }
 
