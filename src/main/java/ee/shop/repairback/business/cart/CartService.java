@@ -4,6 +4,7 @@ import ee.shop.repairback.business.Status;
 import ee.shop.repairback.business.cart.dto.OrderInfo;
 import ee.shop.repairback.business.cart.dto.ProductWithQuantityInfo;
 import ee.shop.repairback.domain.order.Order;
+import ee.shop.repairback.domain.order.OrderMapper;
 import ee.shop.repairback.domain.order.OrderRepository;
 import ee.shop.repairback.domain.orderitem.OrderItem;
 import ee.shop.repairback.domain.orderitem.OrderItemMapper;
@@ -37,6 +38,7 @@ public class CartService {
     private final ProductWithQtyMapper productWithQtyMapper;
     private final RepairItemMapper repairItemMapper;
     private final RepairItemRepository repairItemRepository;
+    private final OrderMapper orderMapper;
 
 
     public void addOrderItemToCart(Integer userId, Integer productId) {
@@ -79,14 +81,16 @@ public class CartService {
 
         return fillDtoWithInfo(orderItems);
     }
-//    public List<OrderInfo> getOrderHistoryItems(Integer userId) {
-//        List<OrderInfo> orderHistoryInfos =new ArrayList<>();
-//        List<Order> orders = orderRepository.findActiveOrdersBy(userId);
-//        for (Order activeOrders:orders){
-//            List<OrderItem> orderItems = orderItemRepository.findOrderItemBy(activeOrders.getId());
-//            List<ProductWithQuantityInfo> productWithQuantityInfos = fillDtoWithInfo(orderItems);
-//        }
-//    }
+
+    public List<OrderInfo> getOrderHistoryItems(Integer userId) {
+        List<Order> orders = orderRepository.findActiveOrdersBy(userId);
+        List<OrderInfo> activeOrders = orderMapper.toOrderInfos(orders);
+        for (OrderInfo activeOrder : activeOrders) {
+            List<OrderItem> orderItems= orderItemRepository.findOrderItemBy(activeOrder.getOrderId());
+            List<ProductWithQuantityInfo> productWithQuantityInfos = fillDtoWithInfo(orderItems);
+        }
+        return activeOrders;
+    }
 
     private static List<ProductWithQuantityInfo> fillDtoWithInfo(List<OrderItem> orderItems) {
         List<ProductWithQuantityInfo> productWithQuantityInfos = new ArrayList<>();
@@ -169,19 +173,19 @@ public class CartService {
     public void addItemQtyInCart(Integer userId, Integer productId, Integer repairItemId) {
         if (productId == 0) {
             this.addRepairOrderItemToCart(userId, repairItemId);
-        }else{
+        } else {
             this.addOrderItemToCart(userId, productId);
         }
     }
 
     public void substractItemQtyFromCart(Integer userId, Integer productId, Integer repairItemId) {
         Order order = orderRepository.findPendingOrderBy(userId);
-        if(repairItemId==0){
+        if (repairItemId == 0) {
             Product product = productRepository.getReferenceById(productId);
             OrderItem orderItem = orderItemRepository.findFirstByProduct(product);
             orderItemRepository.deleteById(orderItem.getId());
-        }else {
-            RepairItem repairItem=repairItemRepository.getReferenceById(repairItemId);
+        } else {
+            RepairItem repairItem = repairItemRepository.getReferenceById(repairItemId);
             OrderItem orderItem = orderItemRepository.findFirstByRepairItem(repairItem);
             orderItemRepository.deleteById(orderItem.getId());
         }
