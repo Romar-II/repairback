@@ -26,7 +26,11 @@ public class CartController {
 
     @GetMapping("/cart/update/{userId}")
     public Integer  updateCartQty(@PathVariable Integer userId){
-        return cartService.updateCartQty(userId);
+        if (userId == null) {
+            return 0;
+        }
+            return cartService.updateCartQty(userId);
+
     }
 
     @GetMapping("/cart/items/{userId}")
