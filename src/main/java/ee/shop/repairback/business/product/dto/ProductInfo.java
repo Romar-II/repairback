@@ -19,4 +19,5 @@ public class ProductInfo implements Serializable {
     String productName;
     BigDecimal productPrice;
     String productDescription;
+    String productImage;
 }

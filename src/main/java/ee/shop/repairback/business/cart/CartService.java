@@ -1,7 +1,7 @@
 package ee.shop.repairback.business.cart;
 
 import ee.shop.repairback.business.Status;
-import ee.shop.repairback.business.cart.dto.OrderItemRequest;
+import ee.shop.repairback.business.cart.dto.OrderInfo;
 import ee.shop.repairback.business.cart.dto.ProductWithQuantityInfo;
 import ee.shop.repairback.domain.order.Order;
 import ee.shop.repairback.domain.order.OrderRepository;
@@ -17,11 +17,9 @@ import ee.shop.repairback.domain.repairitem.RepairItemMapper;
 import ee.shop.repairback.domain.repairitem.RepairItemRepository;
 import ee.shop.repairback.domain.user.User;
 import ee.shop.repairback.domain.user.UserRepository;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.*;
 
 @Service
@@ -63,22 +61,35 @@ public class CartService {
 
     public Integer updateCartQty(Integer userId) {
         Order order = orderRepository.findPendingOrderBy(userId);
-
+        if (order == null) {
+            return 0;
+        }
         List<OrderItem> orderinfo = orderItemRepository.findOrderItemBy(order.getId());
         Integer itemCount = orderinfo.size();
-//todo: if cart is empty
+
         return itemCount;
     }
 
     public List<ProductWithQuantityInfo> getCartItems(Integer userId) {
         Order order = orderRepository.findPendingOrderBy(userId);
+        if (order == null) {
+            return new ArrayList<>();
+        }
         List<OrderItem> orderItems = orderItemRepository.findOrderItemBy(order.getId());
-        List<ProductWithQuantityInfo> productWithQuantityInfos = new ArrayList<>();
-        fillDtoWithInfo(orderItems, productWithQuantityInfos);
-        return productWithQuantityInfos;
-    }
 
-    private static void fillDtoWithInfo(List<OrderItem> orderItems, List<ProductWithQuantityInfo> productWithQuantityInfos) {
+        return fillDtoWithInfo(orderItems);
+    }
+//    public List<OrderInfo> getOrderHistoryItems(Integer userId) {
+//        List<OrderInfo> orderHistoryInfos =new ArrayList<>();
+//        List<Order> orders = orderRepository.findActiveOrdersBy(userId);
+//        for (Order activeOrders:orders){
+//            List<OrderItem> orderItems = orderItemRepository.findOrderItemBy(activeOrders.getId());
+//            List<ProductWithQuantityInfo> productWithQuantityInfos = fillDtoWithInfo(orderItems);
+//        }
+//    }
+
+    private static List<ProductWithQuantityInfo> fillDtoWithInfo(List<OrderItem> orderItems) {
+        List<ProductWithQuantityInfo> productWithQuantityInfos = new ArrayList<>();
         for (OrderItem orderItem : orderItems) {
             Product product = orderItem.getProduct();
             RepairItem repairItem = orderItem.getRepairItem();
@@ -99,6 +110,7 @@ public class CartService {
                 fillDtoWithProduct(repairItem, productWithQuantityInfos);
             }
         }
+        return productWithQuantityInfos;
     }
 
     private static void fillDtoWithProduct(RepairItem repairItem, List<ProductWithQuantityInfo> productWithQuantityInfos) {
@@ -174,4 +186,6 @@ public class CartService {
             orderItemRepository.deleteById(orderItem.getId());
         }
     }
+
+
 }

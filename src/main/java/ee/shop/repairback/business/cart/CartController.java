@@ -1,5 +1,6 @@
 package ee.shop.repairback.business.cart;
 
+import ee.shop.repairback.business.cart.dto.OrderInfo;
 import ee.shop.repairback.business.cart.dto.ProductWithQuantityInfo;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +34,12 @@ public class CartController {
 
         return cartService.getCartItems(userId);
     }
+
+//    @GetMapping("/cart/history/{userId}")
+//    public List<OrderInfo> getOrderHistoryItems(@PathVariable Integer userId){
+//
+//        return cartService.getOrderHistoryItems(userId);
+//    }
 
     @PutMapping("/basket/empty")
     public void deletePendingOrder(@RequestParam Integer userId) {
