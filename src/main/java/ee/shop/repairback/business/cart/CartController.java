@@ -25,11 +25,12 @@ public class CartController {
     }
 
     @GetMapping("/cart/update/{userId}")
-    public Integer  updateCartQty(@PathVariable Integer userId) {
-        if(userId==null){
+    public Integer  updateCartQty(@PathVariable Integer userId){
+        if (userId == null) {
             return 0;
         }
-        return cartService.updateCartQty(userId);
+            return cartService.updateCartQty(userId);
+
     }
 
     @GetMapping("/cart/items/{userId}")
@@ -38,11 +39,11 @@ public class CartController {
         return cartService.getCartItems(userId);
     }
 
-    @GetMapping("/cart/history/{userId}")
-    public List<OrderInfo> getOrderHistoryItems(@PathVariable Integer userId){
-
-        return cartService.getOrderHistoryItems(userId);
-    }
+//    @GetMapping("/cart/history/{userId}")
+//    public List<OrderInfo> getOrderHistoryItems(@PathVariable Integer userId){
+//
+//        return cartService.getOrderHistoryItems(userId);
+//    }
 
     @PutMapping("/basket/empty")
     public void deletePendingOrder(@RequestParam Integer userId) {
