@@ -88,6 +88,7 @@ public class CartService {
         for (OrderInfo activeOrder : activeOrders) {
             List<OrderItem> orderItems= orderItemRepository.findOrderItemBy(activeOrder.getOrderId());
             List<ProductWithQuantityInfo> productWithQuantityInfos = fillDtoWithInfo(orderItems);
+            activeOrder.setProductWithQuantityInfos(productWithQuantityInfos);
         }
         return activeOrders;
     }
