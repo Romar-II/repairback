@@ -186,22 +186,6 @@ INSERT INTO repair.product (id, category_id, sub_category_id, name, price, descr
 INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (default, 6, null, 'Tagaklaas', 500.000, 'Uus tagaklaas', 'A');
 INSERT INTO repair.product (id, category_id, sub_category_id, name, price, description, status) VALUES (default, 6, null, 'Küljeklaas', 500.000, 'Uus küljeklaas', 'A');
 
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 1, 1995, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 1, 1996, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 1, 1997, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 1, 1998, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 2, 2000, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 2, 2001, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 2, 2002, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 2, 2003, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 3, 2002, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 3, 2003, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 3, 2004, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 3, 2005, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 4, 2006, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 4, 2007, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 4, 2008, 2);
-INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (default, 4, 2009, 2);
 
 INSERT INTO repair.role (id, name) VALUES (default, 'Admin');
 INSERT INTO repair.role (id, name) VALUES (default, 'Customer');
@@ -212,6 +196,66 @@ INSERT INTO repair."user" (id, role_id, username, password, status) VALUES (defa
 INSERT INTO repair."user" (id, role_id, username, password, status) VALUES (default, 1, 'Stiven', '123', 'A');
 
 
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (1, 1, 1995, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (2, 1, 1996, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (3, 1, 1997, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (4, 1, 1998, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (5, 2, 2000, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (6, 2, 2001, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (7, 2, 2002, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (8, 2, 2003, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (9, 3, 2002, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (10, 3, 2003, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (11, 3, 2004, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (12, 3, 2005, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (13, 4, 2006, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (14, 4, 2007, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (15, 4, 2008, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (16, 4, 2009, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (17, 5, 2000, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (18, 5, 2001, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (19, 6, 2002, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (20, 6, 2003, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (21, 7, 2003, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (22, 7, 2004, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (23, 8, 2005, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (24, 8, 2006, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (25, 9, 2005, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (26, 9, 2006, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (27, 10, 2006, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (28, 10, 2007, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (29, 11, 2008, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (30, 11, 2008, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (31, 12, 2009, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (32, 12, 2010, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (33, 13, 2011, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (34, 13, 2015, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (35, 14, 2014, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (36, 14, 2017, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (37, 15, 2015, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (38, 15, 2015, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (39, 16, 2014, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (40, 16, 2015, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (41, 17, 2016, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (42, 17, 2017, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (43, 18, 2019, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (44, 18, 2020, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (45, 19, 2020, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (46, 19, 2021, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (47, 20, 2021, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (48, 20, 2023, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (49, 21, 2022, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (50, 21, 2022, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (51, 22, 2016, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (52, 22, 2017, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (53, 23, 2013, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (54, 23, 2014, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (55, 24, 2014, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (56, 24, 2020, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (57, 25, 2011, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (58, 25, 2012, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (59, 26, 2023, 2);
+INSERT INTO repair.model_year (id, model_id, number, repair_multiplier) VALUES (60, 26, 2024, 2);
 
 
 
