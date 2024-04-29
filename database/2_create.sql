@@ -33,7 +33,7 @@ CREATE TABLE image
 (
     id         serial NOT NULL,
     product_id int    NOT NULL,
-    data       bytea  NOT NULL,
+    data      text  NOT NULL,
     CONSTRAINT image_pk PRIMARY KEY (id)
 );
 
